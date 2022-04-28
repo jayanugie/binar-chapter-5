@@ -10,6 +10,10 @@ user.use(basicAuth({
     challenge: true, users     
 }));
 
+user.post('/users', (req, res) => {
+    res.status(200).json(users);
+});
+
 user.post('/login', (req, res) => {
     res.status(200).json({
         username: `${req.auth.user}`,
